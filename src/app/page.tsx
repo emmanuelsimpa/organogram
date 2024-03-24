@@ -8,6 +8,7 @@ import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { EditQuestionModal } from "./component/edit-question-modal";
 import { LoadingLogo } from "@/common/component/loading";
+import { DataProps } from "@/common/types/data";
 
 export default function Home() {
   const {
@@ -19,7 +20,6 @@ export default function Home() {
     handleDelete,
     editDisclosure,
     handleOpenEditModal,
-    isLoading,
     load,
   } = useDashboard();
 
@@ -139,7 +139,10 @@ export default function Home() {
         <QuestionModal onClose={onClose} />
       </ModalWrapper>
       <ModalWrapper isOpen={editDisclosure.isOpen}>
-        <EditQuestionModal onClose={editDisclosure.onClose} data={data} />
+        <EditQuestionModal
+          onClose={editDisclosure.onClose}
+          data={data as DataProps}
+        />
       </ModalWrapper>
     </main>
   );

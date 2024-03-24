@@ -1,6 +1,7 @@
 import { toast } from "react-toastify";
 
-export const handleError = (error: any) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const handleError = (error:any) => {
   if (error.response) {
     // The request was made and the server responded with a status code
     // outside the range of 2xx

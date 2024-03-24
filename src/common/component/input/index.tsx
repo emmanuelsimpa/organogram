@@ -1,8 +1,8 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 
 type InputProps = {
   value: string;
-  onChange: (value: React.ChangeEvent) => void;
+  onChange: (value: ChangeEvent<HTMLInputElement>) => void;
   type?: string;
   name?: string;
   label: string;

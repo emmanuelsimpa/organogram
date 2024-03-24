@@ -20,7 +20,7 @@
   "plugins": ["react", "unused-imports", "prettier"],
   "rules": {
     "@next/next/no-img-element": "off",
-    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-explicit-any": "error",
     "no-unused-vars": "off",
     "prettier/prettier": "error",
     "unused-imports/no-unused-imports": "error",

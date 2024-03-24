@@ -4,12 +4,7 @@ import { toast } from "react-toastify";
 import { handleError } from "@/utils/handle-error";
 import { useDisclosure } from "./useDisclosure-hook";
 import { useRouter } from "next/navigation";
-
-type DataProps = Array<{
-  id: string;
-  question: string;
-  options: Array<string>;
-}>;
+import { DataProps } from "../types/data";
 
 export const useDashboard = () => {
   const router = useRouter();
@@ -50,8 +45,6 @@ export const useDashboard = () => {
     } catch (error) {
       setLoad(false);
       setIsLoading(false);
-      console.log("ln 51", error);
-
       handleError(error);
     }
   };

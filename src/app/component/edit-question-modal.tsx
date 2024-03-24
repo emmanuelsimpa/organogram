@@ -1,15 +1,16 @@
 import { Button } from "@/common/component/button";
 import { Input } from "@/common/component/input";
 import { useEditQuestion } from "@/common/hooks/edit-question-hook";
+import { DataProps } from "@/common/types/data";
 import { Dialog } from "@headlessui/react";
-import React from "react";
+import React, { ChangeEvent } from "react";
 
 export function EditQuestionModal({
   onClose,
   data,
 }: {
   onClose: () => void;
-  data: any;
+  data: DataProps;
 }) {
   const {
     handleInput,
@@ -43,7 +44,9 @@ export function EditQuestionModal({
                 <Input
                   label="Edit the question"
                   value={payload.question}
-                  onChange={(e) => handleInput("question", e)}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    handleInput("question", e)
+                  }
                   name="questions"
                   type="text"
                 />

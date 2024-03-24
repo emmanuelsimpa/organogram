@@ -3,29 +3,22 @@ import React from "react";
 
 type buttonProps = {
   text: string;
-  type?: string;
   color?: string;
   loading: boolean;
   onClick?: () => void;
 };
 
-export function Button({
-  text,
-  type,
-  onClick,
-  loading = false,
-  color,
-}: buttonProps) {
+export function Button({ text, onClick, loading = false, color }: buttonProps) {
   return (
     <>
       {!loading ? (
         <button
           onClick={onClick}
           disabled={loading}
-          type="submit"
+          type={"submit"}
           className={classNames(
             color !== "disabled" ? "bg-green-800" : "bg-gray-800",
-            "flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-950"
+            "flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-950",
           )}
         >
           {text}

@@ -1,5 +1,5 @@
 import { handleError } from "@/utils/handle-error";
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { env } from "../config/env";
 
@@ -17,7 +17,7 @@ export const useQuestion = ({ onClose }: { onClose: () => void }) => {
   const [showOptions, setShowOptions] = useState(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const handleInput = (name: string, data: any) => {
+  const handleInput = (name: string, data: ChangeEvent<HTMLInputElement>) => {
     if (name === "question") {
       return setPayload((prev) => ({ ...prev, [name]: data.target.value }));
     } else {

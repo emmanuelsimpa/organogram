@@ -58,7 +58,6 @@ export default function Login() {
                     text="Sign in"
                     loading={isLoading}
                     onClick={handleLogin}
-                    type="submit"
                   />
                 </div>
               </form>

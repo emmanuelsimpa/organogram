@@ -1,18 +1,13 @@
 import { handleError } from "@/utils/handle-error";
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { env } from "../config/env";
+import { DataProps } from "../types/data";
 
 type payLoadProps = {
   question: string;
   options: Array<string>;
 };
-
-type DataProps = Array<{
-  id: string;
-  question: string;
-  options: Array<string>;
-}>;
 
 export const useEditQuestion = ({
   onClose,
@@ -32,7 +27,7 @@ export const useEditQuestion = ({
   const id = localStorage.getItem("editKey");
   const findData = data?.find((item) => item.id === id);
 
-  const handleInput = (name: string, data: any) => {
+  const handleInput = (name: string, data: ChangeEvent<HTMLInputElement>) => {
     const index = options.indexOf(name);
     if (name === "question") {
       return setPayload((prev) => ({ ...prev, [name]: data.target.value }));
