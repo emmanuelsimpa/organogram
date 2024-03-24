@@ -46,7 +46,9 @@ body {
 }
 
 input[type="radio"] + label span {
-  transition: 0.2s, transform 0.2s;
+  transition:
+    0.2s,
+    transform 0.2s;
 }
 
 input[type="radio"] + label span:hover,
